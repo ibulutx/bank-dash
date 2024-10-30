@@ -56,7 +56,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-secondary">
+    <div className="flex items-center justify-center h-screen bg-red-100">
       {/* <AuthCarousel /> */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-80">
         <input
