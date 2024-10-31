@@ -5,6 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { supabase } from "../../utils/supabaseClient";
 import { z } from "zod";
+import AuthInput from "@/components/auth-input";
+import { GoogleIcon } from "../../../assets/icons/google-icon";
+import Link from "next/link";
 
 const loginSchema = z.object({
   email: z.string().email("Geçerli bir e-posta adresi girin."),
@@ -41,32 +44,50 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-80">
-        <input
-          type="email"
-          placeholder="Email"
-          {...register("email")}
-          className="w-full p-2 border rounded"
-        />
-        <p className="text-red-500">{errors.email?.message}</p>
-
-        <input
-          type="password"
-          placeholder="Password"
-          {...register("password")}
-          className="w-full p-2 border rounded"
-        />
-        <p className="text-red-500">{errors.password?.message}</p>
-
-        <button
-          type="submit"
-          className="w-full p-2 bg-blue-500 text-white rounded"
-          disabled={loading}
-        >
-          {loading ? "Loading..." : "Login"}
+    <div className="flex w-full h-full">
+      <div className="flex flex-col items-center justify-center h-screen w-3/5">
+        <p className="text-4xl font-bold">Sign In to Ember</p>
+        <p className="text-text text-lg">Send, spend and save smarter</p>
+        <button className="border flex flex-row justify-center items-center rounded-lg bg-button px-8 py-2.5 gap-3 font-semibold my-5">
+          <GoogleIcon />
+          Sign In with Google
         </button>
-      </form>
+        <div className="flex items-center gap-4 my-4 mb-6 text-text text-sm">
+          <div className="h-px w-36 bg-text" /> or with e-mail
+          <div className="h-px w-36 bg-text" />
+        </div>
+        <div className="w-full">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4 w-1/2 mx-auto"
+          >
+            <AuthInput
+              type="email"
+              placeholder="ilaydabulut@gmail.com"
+              register={register("email")}
+              error={errors.email?.message}
+            />
+
+            <AuthInput
+              type="password"
+              placeholder="Password"
+              register={register("password")}
+              error={errors.password?.message}
+            />
+            <button
+              type="submit"
+              className="w-full p-2 bg-primary text-white font-bold rounded-lg h-[3.75rem]"
+              disabled={loading}
+            >
+              {loading ? "Loading..." : "Login"}
+            </button>
+            <p>Don’t have a account? Sign Up</p>
+          </form>
+        </div>
+      </div>
+      <div className=" items-center justify-center h-screen w-2/5 bg-primary hidden md:flex">
+        {/* <AuthCarousel /> */}
+      </div>
     </div>
   );
 };
