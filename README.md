@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Twitter Clone - Case Study
 
-## Getting Started
+Bu projede, **Nuxt 3** ve **TypeScript** kullanarak bir Twitter benzeri uygulama geliştirdim. Kullanıcıların tweet atmasına, yorum yapmasına ve içerikleri beğenmesine olanak sağlayarak modern web teknolojileriyle kullanıcı dostu bir deneyim sunmayı hedefledim.
 
-First, run the development server:
+## 🚀 Canlı Demo
+
+Uygulamayı canlı olarak görüntülemek için [buraya](https://twitter-case.vercel.app/) tıklayın.
+
+## 📋 Özellikler
+
+### 1. Tweet Gönderme
+Kullanıcılar, arayüz üzerinden hızlı ve kolay bir şekilde tweet oluşturabilir. Her tweet; kullanıcı adı, içerik, avatar ve zaman damgası gibi bilgileri içerir. Yeni tweetler, anında ana sayfada görünerek dinamik bir akış sağlar.
+
+### 2. Yorum Yapma
+Kullanıcılar, diğer tweetlere yorum yaparak etkileşimde bulunabilir. Yorumlar, tweetlerin altında listelenerek kullanıcılar arasında bir iletişim ortamı oluşturur.
+
+### 3. Beğenme
+Tweetler ve yorumlar, kullanıcılar tarafından beğenilebilir. Beğenme işlemi, ilgili tweetin veya yorumun beğeni sayısını güncelleyerek görsel geri bildirim sunar.
+
+### 4. Dil Desteği (i18n)
+Çoklu dil desteği sağlamak amacıyla **Nuxt I18n** kütüphanesini kullandım. Kullanıcılar, uygulamayı istedikleri dilde görüntüleyebilir.
+
+### 5. Stil Yönetimi (SCSS)
+Uygulamanın stil tasarımını **SCSS** kullanarak geliştirdim. Bu, CSS’in daha modüler ve bakımı kolay bir şekilde yazılmasını sağlıyor.
+
+### 6. Durum Yönetimi (State Management)
+Kullanıcı arayüzündeki durum yönetimini sağlamak için **Pinia** kütüphanesini kullandım. Pinia, Vue 3 ile uyumlu, modern bir durum yönetim kütüphanesidir:
+- **Tweet Store**: Tweetlerin ve yorumların yönetimini sağlıyor. Tweet ekleme, beğenme, yorum yapma gibi işlemler burada tanımlı.
+- **Reaktif Yapı**: Uygulama durumu, Pinia ile reaktif bir şekilde güncelleniyor ve kullanıcı arayüzü anlık olarak güncellemeleri yansıtıyor.
+
+## 🛠️ Kullanılan Teknolojiler
+
+- **Nuxt 3** - Vue.js tabanlı modern bir framework.
+- **TypeScript** - JavaScript üzerinde statik tip kontrolü sağlar.
+- **Pinia** - Vue 3 uyumlu, modern bir durum yönetim kütüphanesi.
+- **SCSS** - CSS’in daha gelişmiş bir ön işlemcisi.
+- **Vue I18n** - Çoklu dil desteği sağlar.
+
+
+## 🚀 Kurulum
+
+Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip edin.
+
+### 1. Depoyu Klonlayın
+İlk olarak projeyi GitHub’dan klonlayın. Terminal veya komut istemcisini açın ve aşağıdaki komutu girin:
+
+```bash
+git clone https://github.com/kullanici_adi/twitter-clone.git
+```
+
+### 2. Proje Dizinine Geçiş
+Klonlama işlemi tamamlandıktan sonra, projenin dizinine geçmeniz gerekiyor. Aşağıdaki komutu kullanarak proje dizinine geçin:
+
+```bash
+cd twitter-clone
+```
+
+### 3. Bağımlılıkları Yükleme
+Proje dizinine girdikten sonra, gerekli bağımlılıkları yüklemek için aşağıdaki komutu çalıştırın. Bu işlem, projede ihtiyaç duyulan tüm paketleri ve kütüphaneleri otomatik olarak yükleyecektir:
+
+```bash
+npm install
+```
+
+### 4. Geliştirme Sunucusunu Başlatma
+Bağımlılıklar yüklendikten sonra, uygulamayı geliştirme modunda başlatmak için aşağıdaki komutu çalıştırın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bu komut, geliştirme sunucusunu başlatacak ve uygulamayı yerel ortamda görüntüleyebilmeniz için gerekli bağlantı adresini sağlayacaktır. Genellikle, tarayıcınızda `http://localhost:3000` adresine giderek uygulamanızı görebilirsiniz.
